@@ -2,7 +2,7 @@ FROM python:2.7.14-alpine3.7
 
 WORKDIR /tmp
 
-RUN apk -no-cache --update-cache \
+RUN apk update \
  && apk add wget ca-certificates \
  && apk add build-base \
  && apk add gcc gfortran python-dev build-base freetype-dev libpng-dev openblas-dev
@@ -10,6 +10,7 @@ RUN apk -no-cache --update-cache \
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 RUN rm -rf /tmp/*
+RUN rm -rf /var/cache/apk/*
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
