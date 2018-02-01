@@ -5,7 +5,7 @@ WORKDIR /tmp
 RUN apk update \
  && apk add wget ca-certificates \
  && apk add build-base \
- && apk add gcc gfortran python-dev build-base freetype-dev libpng-dev openblas-dev
+ && apk add gcc gfortran build-base freetype-dev libpng-dev openblas-dev
 
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
